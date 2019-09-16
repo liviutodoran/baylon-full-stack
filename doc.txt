@@ -1,0 +1,13 @@
+https://www.jorgehernandezramirez.com/2017/03/26/primeros-pasos-en-mongodb-instalacion-en-docker-find-y-aggregation/ --> Mongo DB Docker
+
+https://github.com/Albert-Gao/world-cities-mongodb -- All Cietes world
+
+
+****** EXPOR IMPORT mongodb
+
+mongoexport --collection user --db development --out user.json
+mongoimport --db developmen --collection user --file user.json 
+mongoimport --db development --collection user --file user.json 
+
+
+https://github.com/pottava/golang-microservices

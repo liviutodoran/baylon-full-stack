@@ -1,0 +1,22 @@
+version: "3"
+services:
+  golang:    
+    image: golang:latest
+    container_name: babylon-golang    
+    #command: go run main.go
+    volumes:
+      - ../:/go/src/babylon-stack
+    working_dir: /go/src/babylon-stack
+    entrypoint: go run /go/src/babylon-stack/main.go
+    ports:
+      - "8025:8080"        
+  
+  mongo: 
+    image: mongo:latest
+    container_name: babylon-mongodb
+    volumes:
+      - ${PWD}/mongo:/docker-entrypoint-initdb.d
+    environment:
+      - MONGO_INITDB_DATABASE=babylon
+    ports:
+    - "27017:27017" 
