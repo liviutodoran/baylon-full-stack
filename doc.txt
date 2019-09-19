@@ -1,6 +1,6 @@
 https://www.jorgehernandezramirez.com/2017/03/26/primeros-pasos-en-mongodb-instalacion-en-docker-find-y-aggregation/ --> Mongo DB Docker
 
-https://github.com/Albert-Gao/world-cities-mongodb -- All Cietes world
+https://github.com/Albert-Gao/world-cities-mongodb -- All Cities world
 
 
 ****** EXPOR IMPORT mongodb
@@ -11,3 +11,5 @@ mongoimport --db development --collection user --file user.json
 
 
 https://github.com/pottava/golang-microservices
+https://medium.com/@McMenemy/godorp-docker-compose-for-development-and-production-e37fe0a58d61
+https://dev.to/eduardohitek/mongodb-golang-driver-tutorial-49e5   Tutotial

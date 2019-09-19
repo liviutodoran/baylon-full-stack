@@ -14,7 +14,7 @@ import (
 	"gopkg.in/natefinch/lumberjack.v2"
 )
 
-func handler(w http.ResponseWriter, r *http.Request) {
+func handlerLiviu(w http.ResponseWriter, r *http.Request) {
 	query := r.URL.Query()
 	name := query.Get("name")
 	if name == "" {
@@ -25,10 +25,33 @@ func handler(w http.ResponseWriter, r *http.Request) {
 }
 
 func main_old() {
+
+
+	/***** MIERDA del otro main
+	/*cnn, err := sql.Open("mysql", "quitSmokeDev:Proyecto098.@tcp(82.223.0.98:3306)/quite_smoke_dev")
+	if err != nil {
+			log.Fatal(err)
+	}
+
+	id := 1
+	var name string
+
+	if err := cnn.QueryRow("SELECT name FROM test_tb WHERE id = ? LIMIT 1", id).Scan(&name); err != nil {
+			log.Fatal(err)
+	}
+
+	fmt.Println(id, name)*/
+	//TIME TO 20
+	//ch := time.After(20 * time.Second)
+	//defer (func() { fmt.Println("waiting"); <-ch; fmt.Println("waited") })()
+	
+	fmt.Println("Starting web server on port 8080")
+	
+	*/
 	// Create Server and Route Handlers
 	r := mux.NewRouter()
 
-	r.HandleFunc("/", handler)
+	r.HandleFunc("/", handlerLiviu)
 
 	srv := &http.Server{
 		Handler:      r,
