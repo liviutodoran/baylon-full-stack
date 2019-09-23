@@ -13,3 +13,6 @@ mongoimport --db development --collection user --file user.json
 https://github.com/pottava/golang-microservices
 https://medium.com/@McMenemy/godorp-docker-compose-for-development-and-production-e37fe0a58d61
 https://dev.to/eduardohitek/mongodb-golang-driver-tutorial-49e5   Tutotial
+
+https://medium.com/@petrousov/implementing-crud-operations-with-go-and-mongodb-cf622f2379c4
+https://github.com/gpetrousov/phonebook-backend/b
