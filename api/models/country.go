@@ -1,11 +1,11 @@
 package models
 
 import (	
-	"gopkg.in/mgo.v2/bson"
+	//"gopkg.in/mgo.v2/bson"
 )
 
 type Country struct {
-	ID 					bson.ObjectId  `bson:"_id,omitempty"` 
+	Id 					interface{}  `bson:"_id,omitempty"` 
 	Language 			string `json:"languages"`
 	Country				string `json:"country"`
 	Country_id			int `json:"country_id"`		

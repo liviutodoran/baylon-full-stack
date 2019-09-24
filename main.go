@@ -13,7 +13,7 @@ import(
 func main() {
     
     router :=mux.NewRouter()
-    router.HandleFunc("/countires",handlers.GetAllCountriesEndPoint).Methods("GET")
+    router.HandleFunc("/countries",handlers.GetAllCountriesEndPoint).Methods("GET")
     fmt.Println("Starting server on port 8020...")
 	log.Fatal(http.ListenAndServe(":8020", router))
 }
