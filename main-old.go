@@ -24,8 +24,7 @@ func handlerLiviu(w http.ResponseWriter, r *http.Request) {
 	w.Write([]byte(fmt.Sprintf("Hello, %s\n", name)))
 }
 
-func main_old() {
-
+func mainOld() {
 
 	/***** MIERDA del otro main
 	/*cnn, err := sql.Open("mysql", "quitSmokeDev:Proyecto098.@tcp(82.223.0.98:3306)/quite_smoke_dev")
@@ -44,10 +43,9 @@ func main_old() {
 	//TIME TO 20
 	//ch := time.After(20 * time.Second)
 	//defer (func() { fmt.Println("waiting"); <-ch; fmt.Println("waited") })()
-	
+
 	fmt.Println("Starting web server on port 8080")
-	
-	*/
+
 	// Create Server and Route Handlers
 	r := mux.NewRouter()
 

@@ -15,4 +15,8 @@ https://medium.com/@McMenemy/godorp-docker-compose-for-development-and-productio
 https://dev.to/eduardohitek/mongodb-golang-driver-tutorial-49e5   Tutotial
 
 https://medium.com/@petrousov/implementing-crud-operations-with-go-and-mongodb-cf622f2379c4
-https://github.com/gpetrousov/phonebook-backend/b
+https://github.com/gpetrousov/phonebook-backend/
+
+
+**** DATA salario minimo
+https://countryeconomy.com/national-minimum-wage

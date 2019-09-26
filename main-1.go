@@ -1,15 +1,14 @@
 package main
 
-import( 
+import (
 	//_ "github.com/go-sql-driver/mysql"
 	//"database/sql"
 	"fmt"
 	//"log"
 	//"time"
-	)
+)
 
-
-func main_1() {
+func main1() {
 	/*cnn, err := sql.Open("mysql", "quitSmokeDev:Proyecto098.@tcp(82.223.0.98:3306)/quite_smoke_dev")
 	if err != nil {
 			log.Fatal(err)
@@ -26,7 +25,7 @@ func main_1() {
 	//TIME TO 20
 	//ch := time.After(20 * time.Second)
 	//defer (func() { fmt.Println("waiting"); <-ch; fmt.Println("waited") })()
-	
+
 	fmt.Println("Starting web server on port 8080")
 
 }
