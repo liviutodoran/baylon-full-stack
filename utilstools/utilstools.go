@@ -1,42 +1,48 @@
 package utilstools
 
 import (
-	
+	"babylon-stack/api/models"
+	"encoding/json"
+	"fmt"
+	"io/ioutil"
 	"log"
+
 	"github.com/tealeg/xlsx"
-	"babylon-stack/api/models"	
 )
 
-func GetDataXLX()[]models.MinWage {
-	excelFileName := "./stuff/test.xlsx"
+func GetDataXLX() []models.Minimumwage {
+	excelFileName := "./stuff/National-Minimum-Wage.xlsx"
+	var elements []models.Minimumwage
 	xlFile, err := xlsx.OpenFile(excelFileName)
-
-	var elements []models.MinWage
-
 	if err != nil {
-		log.Fatal(err)
+		log.Fatal("Aqui", err)
 	}
 	for _, sheet := range xlFile.Sheets {
 
 		for _, row := range sheet.Rows[1:] {
 
-			elements = append(elements, models.MinWage{
-				Country:      row.Cells[0].String(),
-				Year:         row.Cells[1].String(),
-				Local_Amount: row.Cells[2].String(),
-				USD:          row.Cells[3].String(),
+			elements = append(elements, models.Minimumwage{
+				Country:     isset(row.Cells, 0)[:len(isset(row.Cells, 0))-1],
+				Year:        isset(row.Cells, 1),
+				LocalAmount: isset(row.Cells, 2),
+				USD:         isset(row.Cells, 3),
 			})
-			/*fmt.Println("\n", row.Cells[0])
-			fmt.Println("\n", row.Cells[1])
-			fmt.Println("\n", row.Cells[2])
-			fmt.Println("\n", row.Cells[3])
-			/*for _, cell := range row.Cells {
-				text := cell.String()
-				fmt.Printf("%s\n", text)
-			}*/
 		}
-	}
-	return elements
 
-	
+	}
+
+	file, err := json.MarshalIndent(elements, "", " ")
+	if err != nil {
+		fmt.Println(err)
+	}
+	_ = ioutil.WriteFile("./stuff/json/National-Minimum-Wage.json", file, 0644)
+
+	return elements
+}
+
+func isset(arr []*xlsx.Cell, index int) string {
+	if len(arr) > index {
+		return arr[index].String()
+	}
+	return "NULL"
 }
