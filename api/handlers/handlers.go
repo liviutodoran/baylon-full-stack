@@ -3,7 +3,6 @@ package handlers
 import (
 	"babylon-stack/api/dao"
 	"babylon-stack/api/models"
-	"babylon-stack/utilstools"
 	"encoding/json"
 	"net/http"
 
@@ -17,14 +16,28 @@ func GetAllCountriesEndPoint(w http.ResponseWriter, r *http.Request) {
 	json.NewEncoder(w).Encode(payload)
 }
 
-func GetMinWageEndPoint(w http.ResponseWriter, r *http.Request) {
-	payload := utilstools.GetDataXLX()
+func GetCountryEndPoint(w http.ResponseWriter, r *http.Request) {
+	countryID := mux.Vars(r)["id"]
+	var country models.Country
+	payload := dao.GetCountry(country, countryID)
 	w.Header().Set("Content-Type", "application/json")
 	json.NewEncoder(w).Encode(payload)
 }
 
-func GetMinWageEndPointMongo(w http.ResponseWriter, r *http.Request) {
-	payload := dao.GetWageMongo()
+// UpdateWageEndpoint updates a Wage
+func UpdateCountryEndpoint(w http.ResponseWriter, r *http.Request) {
+	countryID := mux.Vars(r)["id"]
+	var country models.Country
+	_ = json.NewDecoder(r.Body).Decode(&country)
+	payload := dao.UpdateCountry(country, countryID)
+
+	w.Header().Set("Content-Type", "application/json")
+	json.NewEncoder(w).Encode(payload)
+
+}
+
+func GetAllMinWageEndPoint(w http.ResponseWriter, r *http.Request) {
+	payload := dao.GetAllWage()
 	w.Header().Set("Content-Type", "application/json")
 	json.NewEncoder(w).Encode(payload)
 }
@@ -40,6 +53,9 @@ func UpdateWageEndpoint(w http.ResponseWriter, r *http.Request) {
 	wageID := mux.Vars(r)["id"]
 	var wage models.Minimumwage
 	_ = json.NewDecoder(r.Body).Decode(&wage)
-	dao.UpdateWage(wage, wageID)
+	payload := dao.UpdateWage(wage, wageID)
+
+	w.Header().Set("Content-Type", "application/json")
+	json.NewEncoder(w).Encode(payload)
 
 }
