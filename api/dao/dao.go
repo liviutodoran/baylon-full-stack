@@ -78,6 +78,21 @@ func GetCountry(country models.Country, countryID string) models.Country {
 	return country
 }
 
+func AddCountry(country models.Country) {
+	_, err := db.Collection(COLLCOUNTRIES).InsertOne(context.Background(), country)
+	if err != nil {
+		log.Fatal(err)
+	}
+}
+
+func DeleteCountry(country models.Country) {
+	deleteResult, err := db.Collection(COLLCOUNTRIES).DeleteOne(context.Background(), country, nil)
+	if err != nil {
+		log.Fatal(err)
+	}
+	fmt.Printf("Deleted %v documents in the country collection\n", deleteResult.DeletedCount)
+}
+
 func UpdateCountry(country models.Country, countryID string) models.Country {
 	objID, err := primitive.ObjectIDFromHex(countryID)
 	filter := bson.D{{"_id", objID}}
@@ -126,6 +141,18 @@ func GetAllWage() []models.Minimumwage {
 	return elements
 }
 
+func GetWage(wage models.Minimumwage, wageID string) models.Minimumwage {
+
+	objID, _ := primitive.ObjectIDFromHex(wageID)
+	filter := bson.D{{"_id", objID}}
+	value := db.Collection(COLLWAGE).FindOne(context.Background(), filter).Decode(&wage)
+	if value != nil {
+		log.Fatal(value)
+	}
+
+	return wage
+}
+
 func DeleteWage(wage models.Minimumwage) {
 	deleteResult, err := db.Collection(COLLWAGE).DeleteOne(context.Background(), wage, nil)
 	if err != nil {
@@ -155,4 +182,11 @@ func UpdateWage(wage models.Minimumwage, wageID string) models.Minimumwage {
 	fmt.Println(updateResult)
 
 	return wage
+}
+
+func AddWage(wage models.Minimumwage) {
+	_, err := db.Collection(COLLWAGE).InsertOne(context.Background(), wage)
+	if err != nil {
+		log.Fatal(err)
+	}
 }
