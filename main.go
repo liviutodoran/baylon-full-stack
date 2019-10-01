@@ -2,6 +2,7 @@ package main
 
 import (
 	"babylon-stack/api/handlers"
+	"babylon-stack/api/models"
 	"babylon-stack/utilstools"
 	"fmt"
 	"log"
@@ -14,16 +15,25 @@ func main() {
 
 	utilstools.GetDataXLX()
 	router := mux.NewRouter()
+	var countries models.Country
+	var wage models.Minimumwage
+	var languages models.Languages
 
-	router.HandleFunc("/countries", handlers.GetAllCountriesEndPoint).Methods("GET")
-	router.HandleFunc("/country/{id}", handlers.GetCountryEndPoint).Methods("GET")
-	router.HandleFunc("/country/{id}", handlers.UpdateCountryEndpoint).Methods("PUT")
+	router.HandleFunc("/countries", handlers.GetAll(countries)).Methods("GET")
+	router.HandleFunc("/wage", handlers.GetAll(wage)).Methods("GET")
+	router.HandleFunc("/languages", handlers.GetAll(languages)).Methods("GET")
+
+	router.HandleFunc("/country/{id}", handlers.GetItem(countries)).Methods("GET")
+	router.HandleFunc("/wage/{id}", handlers.GetItem(wage)).Methods("GET")
+	router.HandleFunc("/languages/{id}", handlers.GetItem(languages)).Methods("GET")
+
+	router.HandleFunc("/country/{id}", handlers.UpdateItem(countries)).Methods("PUT")
+	router.HandleFunc("/wage/{id}", handlers.UpdateItem(wage)).Methods("PUT")
+	router.HandleFunc("/languages/{id}", handlers.UpdateItem(languages)).Methods("PUT")
+
 	router.HandleFunc("/country", handlers.AddCountryEndpoint).Methods("POST")
 	router.HandleFunc("/country", handlers.DeleteCountryEndpoint).Methods("DELETE")
 
-	router.HandleFunc("/wage", handlers.GetAllMinWageEndPoint).Methods("GET")
-	router.HandleFunc("/wage/{id}", handlers.GetMinWageEndPoint).Methods("GET")
-	router.HandleFunc("/wage/{id}", handlers.UpdateWageEndpoint).Methods("PUT")
 	router.HandleFunc("/wage", handlers.AddMinWageEndpoint).Methods("POST")
 	router.HandleFunc("/wage", handlers.DeleteWageEndpoint).Methods("DELETE")
 

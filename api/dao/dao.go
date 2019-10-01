@@ -5,6 +5,7 @@ import (
 	"context"
 	"fmt"
 	"log"
+	"reflect"
 
 	"go.mongodb.org/mongo-driver/bson"
 	"go.mongodb.org/mongo-driver/bson/primitive"
@@ -38,24 +39,35 @@ func init() {
 	db = client.Database(DBNAME)
 }
 
-func GetAllCountries() []models.Country {
+func GetAll(data interface{}) interface{} {
 
-	cur, err := db.Collection(COLLCOUNTRIES).Find(context.Background(), bson.D{}, nil)
+	var collection = ""
+	var elements []interface{}
+
+	switch data.(type) {
+	case models.Country:
+		collection = "countries"
+	case models.Minimumwage:
+		collection = "wage"
+	case models.Languages:
+		collection = "languages"
+	}
+
+	cur, err := db.Collection(collection).Find(context.Background(), bson.D{}, nil)
 
 	if err != nil {
 		log.Fatal(err)
 	}
-	var elements []models.Country
+
+	types := reflect.TypeOf(data)
 
 	// Get the next result from the cursor
 	for cur.Next(context.Background()) {
-		var elem models.Country
-		err := cur.Decode(&elem)
-
+		elem := reflect.New(types).Interface()
+		err := cur.Decode(elem)
 		if err != nil {
 			log.Fatal(err)
 		}
-
 		elements = append(elements, elem)
 	}
 	if err := cur.Err(); err != nil {
@@ -66,16 +78,70 @@ func GetAllCountries() []models.Country {
 	return elements
 }
 
-func GetCountry(country models.Country, countryID string) models.Country {
+func GetItem(data interface{}, itemID string) interface{} {
 
-	objID, _ := primitive.ObjectIDFromHex(countryID)
+	objID, _ := primitive.ObjectIDFromHex(itemID)
 	filter := bson.D{{"_id", objID}}
-	value := db.Collection(COLLCOUNTRIES).FindOne(context.Background(), filter).Decode(&country)
+	var collection = ""
+
+	switch data.(type) {
+	case models.Country:
+		collection = "countries"
+	case models.Minimumwage:
+		collection = "wage"
+	case models.Languages:
+		collection = "languages"
+	}
+
+	types := reflect.TypeOf(data)
+	elem := reflect.New(types).Interface()
+
+	value := db.Collection(collection).FindOne(context.Background(), filter).Decode(elem)
 	if value != nil {
 		log.Fatal(value)
 	}
 
-	return country
+	return elem
+}
+
+func UpdateItem(data interface{}, itemID string) interface{} {
+	objID, err := primitive.ObjectIDFromHex(itemID)
+	filter := bson.D{{"_id", objID}}
+	var collection = ""
+	var update = bson.D{}
+	var elem = ""
+
+	switch data.(type) {
+	case models.Country:
+		var elem models.Country
+		collection = "countries"
+		update := bson.D{
+			{"$set", bson.D{
+				{"languages", elem.Languages},
+				{"country", elem.Country},
+				{"country_id", elem.Country_id},
+				{"Capital", elem.Capital},
+				{"currency_name", elem.Currency_name},
+				{"currency_symbol", elem.Currency_symbol},
+				{"currency_code", elem.Currency_code},
+				{"iso", elem.Iso},
+			}},
+		}
+		fmt.Println(update)
+	case models.Minimumwage:
+		collection = "wage"
+	case models.Languages:
+		collection = "languages"
+	}
+
+	updateResult, err := db.Collection(collection).UpdateOne(context.Background(), filter, update)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	fmt.Println(updateResult)
+
+	return elem
 }
 
 func AddCountry(country models.Country) {
@@ -93,41 +159,16 @@ func DeleteCountry(country models.Country) {
 	fmt.Printf("Deleted %v documents in the country collection\n", deleteResult.DeletedCount)
 }
 
-func UpdateCountry(country models.Country, countryID string) models.Country {
-	objID, err := primitive.ObjectIDFromHex(countryID)
-	filter := bson.D{{"_id", objID}}
-	update := bson.D{
-		{"$set", bson.D{
-			{"languages", country.Languages},
-			{"country", country.Country},
-			{"country_id", country.Country_id},
-			{"Capital", country.Capital},
-			{"currency_name", country.Currency_name},
-			{"currency_symbol", country.Currency_symbol},
-			{"currency_code", country.Currency_code},
-			{"iso", country.Iso},
-		}},
-	}
-
-	updateResult, err := db.Collection(COLLCOUNTRIES).UpdateOne(context.Background(), filter, update)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	fmt.Println(updateResult)
-
-	return country
-}
-
-func GetAllWage() []models.Minimumwage {
+func GetAllWage() interface{} {
 	cur, err := db.Collection(COLLWAGE).Find(context.Background(), bson.D{}, nil)
 	if err != nil {
 		log.Fatal(err)
 	}
 	var elements []models.Minimumwage
-	var elem models.Minimumwage
+
 	// Get the next result from the cursor
 	for cur.Next(context.Background()) {
+		var elem models.Minimumwage
 		err := cur.Decode(&elem)
 		if err != nil {
 			log.Fatal(err)
