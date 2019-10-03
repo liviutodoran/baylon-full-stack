@@ -2,7 +2,6 @@ package handlers
 
 import (
 	"babylon-stack/api/dao"
-	"babylon-stack/api/models"
 	"encoding/json"
 	"net/http"
 	"reflect"
@@ -34,49 +33,36 @@ func UpdateItem(data interface{}) http.HandlerFunc {
 
 		types := reflect.TypeOf(data)
 		elem := reflect.New(types).Interface()
-
 		_ = json.NewDecoder(req.Body).Decode(elem)
-		payload := dao.UpdateItem(data, itemID)
+
+		payload := dao.UpdateItem(elem, itemID)
 
 		w.Header().Set("Content-Type", "application/json")
 		json.NewEncoder(w).Encode(payload)
 	})
 }
 
-func AddCountryEndpoint(w http.ResponseWriter, r *http.Request) {
-	var country models.Country
-	_ = json.NewDecoder(r.Body).Decode(&country)
-	dao.AddCountry(country)
-	json.NewEncoder(w).Encode(country)
-}
+func AddItem(data interface{}) http.HandlerFunc {
 
-func DeleteCountryEndpoint(w http.ResponseWriter, r *http.Request) {
-	var country models.Country
-	_ = json.NewDecoder(r.Body).Decode(&country)
-	dao.DeleteCountry(country)
-}
+	return http.HandlerFunc(func(w http.ResponseWriter, req *http.Request) {
+		types := reflect.TypeOf(data)
+		elem := reflect.New(types).Interface()
 
-func DeleteWageEndpoint(w http.ResponseWriter, r *http.Request) {
-	var wage models.Minimumwage
-	_ = json.NewDecoder(r.Body).Decode(&wage)
-	dao.DeleteWage(wage)
-}
-
-// UpdateWageEndpoint updates a Wage
-func UpdateWageEndpoint(w http.ResponseWriter, r *http.Request) {
-	wageID := mux.Vars(r)["id"]
-	var wage models.Minimumwage
-	_ = json.NewDecoder(r.Body).Decode(&wage)
-	payload := dao.UpdateWage(wage, wageID)
-
-	w.Header().Set("Content-Type", "application/json")
-	json.NewEncoder(w).Encode(payload)
+		_ = json.NewDecoder(req.Body).Decode(&elem)
+		dao.AddItem(elem)
+		json.NewEncoder(w).Encode(elem)
+	})
 
 }
 
-func AddMinWageEndpoint(w http.ResponseWriter, r *http.Request) {
-	var wage models.Minimumwage
-	_ = json.NewDecoder(r.Body).Decode(&wage)
-	dao.AddWage(wage)
-	json.NewEncoder(w).Encode(wage)
+func DeleteItem(data interface{}) http.HandlerFunc {
+
+	return http.HandlerFunc(func(w http.ResponseWriter, req *http.Request) {
+		types := reflect.TypeOf(data)
+		elem := reflect.New(types).Interface()
+
+		_ = json.NewDecoder(req.Body).Decode(&elem)
+		dao.DeleteItem(elem)
+	})
+
 }

@@ -31,11 +31,13 @@ func main() {
 	router.HandleFunc("/wage/{id}", handlers.UpdateItem(wage)).Methods("PUT")
 	router.HandleFunc("/languages/{id}", handlers.UpdateItem(languages)).Methods("PUT")
 
-	router.HandleFunc("/country", handlers.AddCountryEndpoint).Methods("POST")
-	router.HandleFunc("/country", handlers.DeleteCountryEndpoint).Methods("DELETE")
+	router.HandleFunc("/country", handlers.AddItem(countries)).Methods("POST")
+	router.HandleFunc("/wage", handlers.AddItem(wage)).Methods("POST")
+	router.HandleFunc("/languages", handlers.AddItem(languages)).Methods("POST")
 
-	router.HandleFunc("/wage", handlers.AddMinWageEndpoint).Methods("POST")
-	router.HandleFunc("/wage", handlers.DeleteWageEndpoint).Methods("DELETE")
+	router.HandleFunc("/country", handlers.DeleteItem(countries)).Methods("DELETE")
+	router.HandleFunc("/wage", handlers.DeleteItem(wage)).Methods("DELETE")
+	router.HandleFunc("/languages", handlers.DeleteItem(languages)).Methods("DELETE")
 
 	fmt.Println("Starting server on port 8020...")
 	log.Fatal(http.ListenAndServe(":8020", router))

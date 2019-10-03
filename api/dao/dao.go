@@ -18,12 +18,11 @@ const CONNECTIONSTRING = "mongodb://localhost:27017"
 
 // DBNAME Database name
 const DBNAME = "babylon"
-
-// COLLNAME Collection name
-const COLLCOUNTRIES = "countries"
 const COLLWAGE = "wage"
+const COLLCOUNTRIES = "countries"
 
 var db *mongo.Database
+var collection = ""
 
 func init() {
 	clientOptions := options.Client().ApplyURI(CONNECTIONSTRING)
@@ -41,7 +40,6 @@ func init() {
 
 func GetAll(data interface{}) interface{} {
 
-	var collection = ""
 	var elements []interface{}
 
 	switch data.(type) {
@@ -82,7 +80,6 @@ func GetItem(data interface{}, itemID string) interface{} {
 
 	objID, _ := primitive.ObjectIDFromHex(itemID)
 	filter := bson.D{{"_id", objID}}
-	var collection = ""
 
 	switch data.(type) {
 	case models.Country:
@@ -104,34 +101,64 @@ func GetItem(data interface{}, itemID string) interface{} {
 	return elem
 }
 
-func UpdateItem(data interface{}, itemID string) interface{} {
+func UpdateItem(elem interface{}, itemID string) interface{} {
 	objID, err := primitive.ObjectIDFromHex(itemID)
 	filter := bson.D{{"_id", objID}}
-	var collection = ""
 	var update = bson.D{}
-	var elem = ""
 
-	switch data.(type) {
-	case models.Country:
-		var elem models.Country
+	switch elem.(type) {
+	case *models.Country:
+		fmt.Println("Model Country")
 		collection = "countries"
-		update := bson.D{
-			{"$set", bson.D{
-				{"languages", elem.Languages},
-				{"country", elem.Country},
-				{"country_id", elem.Country_id},
-				{"Capital", elem.Capital},
-				{"currency_name", elem.Currency_name},
-				{"currency_symbol", elem.Currency_symbol},
-				{"currency_code", elem.Currency_code},
-				{"iso", elem.Iso},
-			}},
+		var c models.Country
+
+		out, err := bson.Marshal(elem)
+		if err != nil {
+			fmt.Println(err)
 		}
-		fmt.Println(update)
-	case models.Minimumwage:
+		bdoc := bson.Unmarshal([]byte(out), &c)
+		if bdoc != nil {
+			fmt.Println(bdoc)
+		}
+
+		update = bson.D{
+			{"$set", c},
+		}
+
+	case *models.Minimumwage:
+		fmt.Println("Model Wage")
 		collection = "wage"
-	case models.Languages:
+		var w models.Minimumwage
+
+		out, err := bson.Marshal(elem)
+		if err != nil {
+			fmt.Println(err)
+		}
+		bdoc := bson.Unmarshal([]byte(out), &w)
+		if bdoc != nil {
+			fmt.Println(bdoc)
+		}
+
+		update = bson.D{
+			{"$set", w},
+		}
+	case *models.Languages:
+		fmt.Println("Model Languages")
 		collection = "languages"
+		var l models.Languages
+
+		out, err := bson.Marshal(elem)
+		if err != nil {
+			fmt.Println(err)
+		}
+		bdoc := bson.Unmarshal([]byte(out), &l)
+		if bdoc != nil {
+			fmt.Println(bdoc)
+		}
+
+		update = bson.D{
+			{"$set", l},
+		}
 	}
 
 	updateResult, err := db.Collection(collection).UpdateOne(context.Background(), filter, update)
@@ -144,90 +171,45 @@ func UpdateItem(data interface{}, itemID string) interface{} {
 	return elem
 }
 
-func AddCountry(country models.Country) {
-	_, err := db.Collection(COLLCOUNTRIES).InsertOne(context.Background(), country)
+func AddItem(data interface{}) {
+
+	switch data.(type) {
+	case models.Country:
+		collection = "countries"
+		fmt.Println("Model Countries")
+	case models.Minimumwage:
+		fmt.Println("Model Wage")
+		collection = "wage"
+	case models.Languages:
+		fmt.Println("Model Languages")
+		collection = "languages"
+	}
+
+	_, err := db.Collection(collection).InsertOne(context.Background(), data)
 	if err != nil {
 		log.Fatal(err)
 	}
 }
 
-func DeleteCountry(country models.Country) {
-	deleteResult, err := db.Collection(COLLCOUNTRIES).DeleteOne(context.Background(), country, nil)
+func DeleteItem(data interface{}) {
+	switch data.(type) {
+	case *models.Country:
+		fmt.Println("Model Countries")
+		collection = "countries"
+	case *models.Minimumwage:
+		fmt.Println("Model Wage")
+		collection = "wage"
+	case *models.Languages:
+		fmt.Println("Model Languages")
+		collection = "languages"
+	}
+
+	fmt.Println("Delete Collection :", collection)
+	fmt.Println("Data to delete  :", data)
+
+	deleteResult, err := db.Collection(collection).DeleteOne(context.Background(), data, nil)
 	if err != nil {
 		log.Fatal(err)
 	}
-	fmt.Printf("Deleted %v documents in the country collection\n", deleteResult.DeletedCount)
-}
-
-func GetAllWage() interface{} {
-	cur, err := db.Collection(COLLWAGE).Find(context.Background(), bson.D{}, nil)
-	if err != nil {
-		log.Fatal(err)
-	}
-	var elements []models.Minimumwage
-
-	// Get the next result from the cursor
-	for cur.Next(context.Background()) {
-		var elem models.Minimumwage
-		err := cur.Decode(&elem)
-		if err != nil {
-			log.Fatal(err)
-		}
-		elements = append(elements, elem)
-	}
-	if err := cur.Err(); err != nil {
-		log.Fatal(err)
-	}
-	cur.Close(context.Background())
-	return elements
-}
-
-func GetWage(wage models.Minimumwage, wageID string) models.Minimumwage {
-
-	objID, _ := primitive.ObjectIDFromHex(wageID)
-	filter := bson.D{{"_id", objID}}
-	value := db.Collection(COLLWAGE).FindOne(context.Background(), filter).Decode(&wage)
-	if value != nil {
-		log.Fatal(value)
-	}
-
-	return wage
-}
-
-func DeleteWage(wage models.Minimumwage) {
-	deleteResult, err := db.Collection(COLLWAGE).DeleteOne(context.Background(), wage, nil)
-	if err != nil {
-		log.Fatal(err)
-	}
-	fmt.Printf("Deleted %v documents in the wage collection\n", deleteResult.DeletedCount)
-}
-
-func UpdateWage(wage models.Minimumwage, wageID string) models.Minimumwage {
-	objID, err := primitive.ObjectIDFromHex(wageID)
-	filter := bson.D{{"_id", objID}}
-	fmt.Println(filter)
-	update := bson.D{
-		{"$set", bson.D{
-			{"Country", wage.Country},
-			{"Year", wage.Year},
-			{"LocalAmount", wage.LocalAmount},
-			{"USD", wage.USD},
-		}},
-	}
-
-	updateResult, err := db.Collection(COLLWAGE).UpdateOne(context.Background(), filter, update)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	fmt.Println(updateResult)
-
-	return wage
-}
-
-func AddWage(wage models.Minimumwage) {
-	_, err := db.Collection(COLLWAGE).InsertOne(context.Background(), wage)
-	if err != nil {
-		log.Fatal(err)
-	}
+	fmt.Printf("Deleted %v documents in the collection\n", deleteResult.DeletedCount)
 }
