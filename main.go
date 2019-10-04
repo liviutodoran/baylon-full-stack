@@ -1,62 +1,49 @@
 package main
 
-import( 
-	
-	//"fmt"
-	"log"	
-	//"net/http"
-	"context"
-    Country "github.com/babylon-stack/country"
-    "go.mongodb.org/mongo-driver/bson"
-	"go.mongodb.org/mongo-driver/mongo"
-    "go.mongodb.org/mongo-driver/mongo/options"
-    "go.mongodb.org/mongo-driver/mongo/readpref"
-    )
-    
-   
-func GetClient() *mongo.Client {
-    clientOptions := options.Client().ApplyURI("mongodb://localhost:27017")
-    client, err := mongo.NewClient(clientOptions)
-    if err != nil {
-        log.Fatal(err)
-    }
-    err = client.Connect(context.Background())
-    if err != nil {
-        log.Fatal(err)
-    }
-    return client
-}
+import (
+	"babylon-stack/api/handlers"
+	"babylon-stack/api/models"
+	"babylon-stack/utilstools"
+	"fmt"
+	"log"
+	"net/http"
 
-func ReturnAllCountries(client *mongo.Client, filter bson.M) []*Country {
-    var countries []*Country
-    collection := client.Database("babylon").Collection("countries")
-    cur, err := collection.Find(context.TODO(), filter)
-    if err != nil {
-        log.Fatal("Error on Finding all the documents", err)
-    }
-    for cur.Next(context.TODO()) {
-        var country Country
-        err = cur.Decode(&country)
-        if err != nil {
-            log.Fatal("Error on Decoding the document", err)
-        }
-        countries = append(countries, &country)
-    }
-    return countries
-}
+	"github.com/gorilla/mux"
+)
 
 func main() {
-    Country := Country.New() 	
-	c := GetClient()
-    err := c.Ping(context.Background(), readpref.Primary())
-    if err != nil {
-        log.Fatal("Couldn't connect to the database", err)
-    } else {
-        log.Println("Connected!")
-    }
-	
-	countries := ReturnAllCountries(c, bson.M{})
-	for _, hero := range countries {
-		log.Println(countries.Name, countries.Capital)
-	}
+
+	utilstools.GetDataXLX()
+	router := mux.NewRouter()
+	var countries models.Country
+	var wage models.Minimumwage
+	var languages models.Languages
+
+	router.HandleFunc("/countries", handlers.GetAll(countries)).Methods("GET")
+	router.HandleFunc("/wage", handlers.GetAll(wage)).Methods("GET")
+	router.HandleFunc("/languages", handlers.GetAll(languages)).Methods("GET")
+
+	router.HandleFunc("/country/{id}", handlers.GetItem(countries)).Methods("GET")
+	router.HandleFunc("/wage/{id}", handlers.GetItem(wage)).Methods("GET")
+	router.HandleFunc("/languages/{id}", handlers.GetItem(languages)).Methods("GET")
+
+	router.HandleFunc("/country/{id}", handlers.UpdateItem(countries)).Methods("PUT")
+	router.HandleFunc("/wage/{id}", handlers.UpdateItem(wage)).Methods("PUT")
+	router.HandleFunc("/languages/{id}", handlers.UpdateItem(languages)).Methods("PUT")
+
+	router.HandleFunc("/country", handlers.AddItem(countries)).Methods("POST")
+	router.HandleFunc("/wage", handlers.AddItem(wage)).Methods("POST")
+	router.HandleFunc("/languages", handlers.AddItem(languages)).Methods("POST")
+
+	router.HandleFunc("/country", handlers.DeleteItem(countries)).Methods("DELETE")
+	router.HandleFunc("/wage", handlers.DeleteItem(wage)).Methods("DELETE")
+	router.HandleFunc("/languages", handlers.DeleteItem(languages)).Methods("DELETE")
+
+	router.HandleFunc("/languages", handlers.DeleteItem(languages)).Methods("DELETE")
+
+	router.HandleFunc("/currency/{item1}/{item2}", handlers.GetCurrency).Methods("GET")
+
+	fmt.Println("Starting server on port 8020...")
+	log.Fatal(http.ListenAndServe(":8020", router))
+
 }

@@ -1,0 +1,1017 @@
+[
+ {
+  "Id": null,
+  "Country": "United States",
+  "Year": "2019",
+  "LocalAmount": "1,256.7",
+  "USD": "1,256.7"
+ },
+ {
+  "Id": null,
+  "Country": "United Kingdom",
+  "Year": "2019",
+  "LocalAmount": "1,363.7",
+  "USD": "1,721.0 "
+ },
+ {
+  "Id": null,
+  "Country": "Germany",
+  "Year": "2019",
+  "LocalAmount": "1,557.0",
+  "USD": "1,782.8 "
+ },
+ {
+  "Id": null,
+  "Country": "France",
+  "Year": "2019",
+  "LocalAmount": "1,521.2",
+  "USD": "1,741.8 "
+ },
+ {
+  "Id": null,
+  "Country": "Japan",
+  "Year": "2017",
+  "LocalAmount": "148,113.3",
+  "USD": "1,268.3 "
+ },
+ {
+  "Id": null,
+  "Country": "Spain",
+  "Year": "2019",
+  "LocalAmount": "1,050.0",
+  "USD": "1,202.3 "
+ },
+ {
+  "Id": null,
+  "Country": "Portugal",
+  "Year": "2019",
+  "LocalAmount": "700.0",
+  "USD": "801.5 "
+ },
+ {
+  "Id": null,
+  "Country": "Greece",
+  "Year": "2019",
+  "LocalAmount": "758.3",
+  "USD": "845.6 "
+ },
+ {
+  "Id": null,
+  "Country": "Ireland",
+  "Year": "2019",
+  "LocalAmount": "1,656.2",
+  "USD": "1,896.4 "
+ },
+ {
+  "Id": null,
+  "Country": "Andorra",
+  "Year": "2015",
+  "LocalAmount": "975.9",
+  "USD": "1,184.8 "
+ },
+ {
+  "Id": null,
+  "Country": "Afghanistan",
+  "Year": "2013",
+  "LocalAmount": "5,000.0",
+  "USD": "67.00"
+ },
+ {
+  "Id": null,
+  "Country": "Albania",
+  "Year": "2019",
+  "LocalAmount": "26,000.0",
+  "USD": "242.5 "
+ },
+ {
+  "Id": null,
+  "Country": "Armenia",
+  "Year": "2014",
+  "LocalAmount": "66,138.0",
+  "USD": "163.1 "
+ },
+ {
+  "Id": null,
+  "Country": "Angola",
+  "Year": "2018",
+  "LocalAmount": "21,454.0",
+  "USD": "58.11 "
+ },
+ {
+  "Id": null,
+  "Country": "Argentina",
+  "Year": "2019",
+  "LocalAmount": "15,625.0",
+  "USD": "421.1 "
+ },
+ {
+  "Id": null,
+  "Country": "Australia",
+  "Year": "2018",
+  "LocalAmount": "3,063.9",
+  "USD": "2,389.9 "
+ },
+ {
+  "Id": null,
+  "Country": "Azerbaijan",
+  "Year": "2018",
+  "LocalAmount": "130.0",
+  "USD": "76.5 "
+ },
+ {
+  "Id": null,
+  "Country": "Bangladesh",
+  "Year": "2018",
+  "LocalAmount": "8,000.0",
+  "USD": "97.2 "
+ },
+ {
+  "Id": null,
+  "Country": "Belgium",
+  "Year": "2019",
+  "LocalAmount": "1,593.8",
+  "USD": "1,824.9 "
+ },
+ {
+  "Id": null,
+  "Country": "Burkina Faso",
+  "Year": "2018",
+  "LocalAmount": "34,664.0",
+  "USD": "58.07 "
+ },
+ {
+  "Id": null,
+  "Country": "Bulgaria",
+  "Year": "2019",
+  "LocalAmount": "560.0",
+  "USD": "327.9 "
+ },
+ {
+  "Id": null,
+  "Country": "Bahrain",
+  "Year": "2011",
+  "LocalAmount": "300.0",
+  "USD": "797.9 "
+ },
+ {
+  "Id": null,
+  "Country": "Burundi",
+  "Year": "2013",
+  "LocalAmount": "3,467.0",
+  "USD": "NULL"
+ },
+ {
+  "Id": null,
+  "Country": "Benin",
+  "Year": "2013",
+  "LocalAmount": "31,625.0",
+  "USD": "52.99 "
+ },
+ {
+  "Id": null,
+  "Country": "Bolivia",
+  "Year": "2017",
+  "LocalAmount": "2,000.0",
+  "USD": "291.6 "
+ },
+ {
+  "Id": null,
+  "Country": "Brazil",
+  "Year": "2018",
+  "LocalAmount": "954.0",
+  "USD": "288.4 "
+ },
+ {
+  "Id": null,
+  "Country": "Bahamas",
+  "Year": "2018",
+  "LocalAmount": "210.0",
+  "USD": "210.0 "
+ },
+ {
+  "Id": null,
+  "Country": "Bhutan",
+  "Year": "2013",
+  "LocalAmount": "3,000.0",
+  "USD": "42.38 "
+ },
+ {
+  "Id": null,
+  "Country": "Botswana",
+  "Year": "2013",
+  "LocalAmount": "780.0",
+  "USD": "100.2 "
+ },
+ {
+  "Id": null,
+  "Country": "Belarus",
+  "Year": "2018",
+  "LocalAmount": "305.0",
+  "USD": "154.6 "
+ },
+ {
+  "Id": null,
+  "Country": "Belize",
+  "Year": "2012",
+  "LocalAmount": "644.0",
+  "USD": "322.2 "
+ },
+ {
+  "Id": null,
+  "Country": "Canada",
+  "Year": "2018",
+  "LocalAmount": "2,229.1",
+  "USD": "1,780.8 "
+ },
+ {
+  "Id": null,
+  "Country": "Democratic Republic of the Congo",
+  "Year": "2011",
+  "LocalAmount": "36,400.0",
+  "USD": "21.92 "
+ },
+ {
+  "Id": null,
+  "Country": "Ivory Coast",
+  "Year": "2018",
+  "LocalAmount": "60,000.0",
+  "USD": "100.53"
+ },
+ {
+  "Id": null,
+  "Country": "Chile",
+  "Year": "2018",
+  "LocalAmount": "282,000.0",
+  "USD": "458.4 "
+ },
+ {
+  "Id": null,
+  "Country": "Cameroon",
+  "Year": "2014",
+  "LocalAmount": "32,270.0",
+  "USD": "54.07 "
+ },
+ {
+  "Id": null,
+  "Country": "China",
+  "Year": "2018",
+  "LocalAmount": "2,120.0",
+  "USD": "325.6 "
+ },
+ {
+  "Id": null,
+  "Country": "Colombia",
+  "Year": "2018",
+  "LocalAmount": "781,242.0",
+  "USD": "262.9 "
+ },
+ {
+  "Id": null,
+  "Country": "Costa Rica",
+  "Year": "2018",
+  "LocalAmount": "262,298.1",
+  "USD": "460.4 "
+ },
+ {
+  "Id": null,
+  "Country": "Cuba",
+  "Year": "2011",
+  "LocalAmount": "225.0",
+  "USD": "225.01 "
+ },
+ {
+  "Id": null,
+  "Country": "Cyprus",
+  "Year": "2018",
+  "LocalAmount": "870.0",
+  "USD": "1,043.4 "
+ },
+ {
+  "Id": null,
+  "Country": "Czech Republic",
+  "Year": "2019",
+  "LocalAmount": "13,350.0",
+  "USD": "627.8 "
+ },
+ {
+  "Id": null,
+  "Country": "Dominican Republic",
+  "Year": "2013",
+  "LocalAmount": "6,880.0",
+  "USD": "170.9 "
+ },
+ {
+  "Id": null,
+  "Country": "Algeria",
+  "Year": "2013",
+  "LocalAmount": "18,000.0",
+  "USD": "230.5 "
+ },
+ {
+  "Id": null,
+  "Country": "Ecuador",
+  "Year": "2013",
+  "LocalAmount": "318.0",
+  "USD": "318.0 "
+ },
+ {
+  "Id": null,
+  "Country": "Estonia",
+  "Year": "2019",
+  "LocalAmount": "540.0",
+  "USD": "618.3 "
+ },
+ {
+  "Id": null,
+  "Country": "Egypt",
+  "Year": "2013",
+  "LocalAmount": "700.0",
+  "USD": "110.2 "
+ },
+ {
+  "Id": null,
+  "Country": "Ethiopia",
+  "Year": "2011",
+  "LocalAmount": "420.0",
+  "USD": "14.30 "
+ },
+ {
+  "Id": null,
+  "Country": "Fiji",
+  "Year": "2012",
+  "LocalAmount": "589.0",
+  "USD": "268.53"
+ },
+ {
+  "Id": null,
+  "Country": "Gabon",
+  "Year": "2013",
+  "LocalAmount": "150,000.0",
+  "USD": "251.32"
+ },
+ {
+  "Id": null,
+  "Country": "Georgia",
+  "Year": "2018",
+  "LocalAmount": "350.00",
+  "USD": "117.85 "
+ },
+ {
+  "Id": null,
+  "Country": "Ghana",
+  "Year": "2013",
+  "LocalAmount": "141.5",
+  "USD": "75.1 "
+ },
+ {
+  "Id": null,
+  "Country": "The Gambia",
+  "Year": "2013",
+  "LocalAmount": "1,300.0",
+  "USD": "25.79 "
+ },
+ {
+  "Id": null,
+  "Country": "Equatorial Guinea",
+  "Year": "2013",
+  "LocalAmount": "129,035.0",
+  "USD": "216.19 "
+ },
+ {
+  "Id": null,
+  "Country": "Guatemala",
+  "Year": "2013",
+  "LocalAmount": "2,392.0",
+  "USD": "302.7 "
+ },
+ {
+  "Id": null,
+  "Country": "Guinea-Bissau",
+  "Year": "2013",
+  "LocalAmount": "19,030.0",
+  "USD": "31.88"
+ },
+ {
+  "Id": null,
+  "Country": "Guyana",
+  "Year": "2013",
+  "LocalAmount": "35,000.0",
+  "USD": "168.1"
+ },
+ {
+  "Id": null,
+  "Country": "Hong Kong",
+  "Year": "2013",
+  "LocalAmount": "6,370.0",
+  "USD": "821.9 "
+ },
+ {
+  "Id": null,
+  "Country": "Honduras",
+  "Year": "2013",
+  "LocalAmount": "6,532.0",
+  "USD": "327.3 "
+ },
+ {
+  "Id": null,
+  "Country": "Croatia",
+  "Year": "2019",
+  "LocalAmount": "3,750.0",
+  "USD": "523.1 "
+ },
+ {
+  "Id": null,
+  "Country": "Haiti",
+  "Year": "2011",
+  "LocalAmount": "6,500.0",
+  "USD": "68.04"
+ },
+ {
+  "Id": null,
+  "Country": "Hungary",
+  "Year": "2019",
+  "LocalAmount": "149,000.0",
+  "USD": "566.7 "
+ },
+ {
+  "Id": null,
+  "Country": "Indonesia",
+  "Year": "2013",
+  "LocalAmount": "1,332,400.0",
+  "USD": "137.8 "
+ },
+ {
+  "Id": null,
+  "Country": "Israel",
+  "Year": "2018",
+  "LocalAmount": "5,300.0",
+  "USD": "1,528.7 "
+ },
+ {
+  "Id": null,
+  "Country": "India",
+  "Year": "2013",
+  "LocalAmount": "2,990.0",
+  "USD": "54.5 "
+ },
+ {
+  "Id": null,
+  "Country": "Iran",
+  "Year": "2011",
+  "LocalAmount": "3,303,000.0",
+  "USD": "319.0 "
+ },
+ {
+  "Id": null,
+  "Country": "Jamaica",
+  "Year": "2013",
+  "LocalAmount": "21,667.0",
+  "USD": "160.45 "
+ },
+ {
+  "Id": null,
+  "Country": "Jordan",
+  "Year": "2013",
+  "LocalAmount": "150.0",
+  "USD": "211.48 "
+ },
+ {
+  "Id": null,
+  "Country": "Kenya",
+  "Year": "2012",
+  "LocalAmount": "13,471.0",
+  "USD": "158.4 "
+ },
+ {
+  "Id": null,
+  "Country": "Kyrgyzstan",
+  "Year": "2011",
+  "LocalAmount": "690.0",
+  "USD": "9.88"
+ },
+ {
+  "Id": null,
+  "Country": "Cambodia",
+  "Year": "2013",
+  "LocalAmount": "80.0",
+  "USD": "180.00"
+ },
+ {
+  "Id": null,
+  "Country": "Comoros",
+  "Year": "2013",
+  "LocalAmount": "55,000.0",
+  "USD": "122.66 "
+ },
+ {
+  "Id": null,
+  "Country": "South Korea",
+  "Year": "2018",
+  "LocalAmount": "1,573,770.0",
+  "USD": "1,468.9 "
+ },
+ {
+  "Id": null,
+  "Country": "Kuwait",
+  "Year": "2011",
+  "LocalAmount": "60.0",
+  "USD": "213.8 "
+ },
+ {
+  "Id": null,
+  "Country": "Kazakhstan",
+  "Year": "2013",
+  "LocalAmount": "18,660.0",
+  "USD": "124.2 "
+ },
+ {
+  "Id": null,
+  "Country": "Laos",
+  "Year": "2013",
+  "LocalAmount": "626,000.0",
+  "USD": "71.11 "
+ },
+ {
+  "Id": null,
+  "Country": "Lebanon",
+  "Year": "2011",
+  "LocalAmount": "500,000.0",
+  "USD": "330.3 "
+ },
+ {
+  "Id": null,
+  "Country": "Sri Lanka",
+  "Year": "2009",
+  "LocalAmount": "5,888.0",
+  "USD": "52.2 "
+ },
+ {
+  "Id": null,
+  "Country": "Lesotho",
+  "Year": "2019",
+  "LocalAmount": "1,600.0",
+  "USD": "107.60"
+ },
+ {
+  "Id": null,
+  "Country": "Lithuania",
+  "Year": "2019",
+  "LocalAmount": "555.0",
+  "USD": "635.5 "
+ },
+ {
+  "Id": null,
+  "Country": "Luxembourg",
+  "Year": "2019",
+  "LocalAmount": "2,071.1",
+  "USD": "2,371.4 "
+ },
+ {
+  "Id": null,
+  "Country": "Latvia",
+  "Year": "2019",
+  "LocalAmount": "430.0",
+  "USD": "492.4 "
+ },
+ {
+  "Id": null,
+  "Country": "Libya",
+  "Year": "2013",
+  "LocalAmount": "450.0",
+  "USD": "320.00"
+ },
+ {
+  "Id": null,
+  "Country": "Morocco",
+  "Year": "2013",
+  "LocalAmount": "2,334.0",
+  "USD": "277.6 "
+ },
+ {
+  "Id": null,
+  "Country": "Moldova",
+  "Year": "2017",
+  "LocalAmount": "1,000.0",
+  "USD": "50.1 "
+ },
+ {
+  "Id": null,
+  "Country": "Montenegro",
+  "Year": "2019",
+  "LocalAmount": "331.3",
+  "USD": "369.5 "
+ },
+ {
+  "Id": null,
+  "Country": "Madagascar",
+  "Year": "2013",
+  "LocalAmount": "108,019.0",
+  "USD": "28.54"
+ },
+ {
+  "Id": null,
+  "Country": "North Macedonia",
+  "Year": "2018",
+  "LocalAmount": "17,370.0",
+  "USD": "309.99"
+ },
+ {
+  "Id": null,
+  "Country": "Mali",
+  "Year": "2016",
+  "LocalAmount": "40,000.0",
+  "USD": "67.03"
+ },
+ {
+  "Id": null,
+  "Country": "Mongolia",
+  "Year": "2018",
+  "LocalAmount": "320,000.0",
+  "USD": "119.96"
+ },
+ {
+  "Id": null,
+  "Country": "Mauritania",
+  "Year": "2011",
+  "LocalAmount": "30,000.0",
+  "USD": "106.4 "
+ },
+ {
+  "Id": null,
+  "Country": "Malta",
+  "Year": "2019",
+  "LocalAmount": "762.0",
+  "USD": "872.5 "
+ },
+ {
+  "Id": null,
+  "Country": "Mauritius",
+  "Year": "2013",
+  "LocalAmount": "4,493.0",
+  "USD": "147.1 "
+ },
+ {
+  "Id": null,
+  "Country": "Maldives",
+  "Year": "2010",
+  "LocalAmount": "3,100.0",
+  "USD": "242.4 "
+ },
+ {
+  "Id": null,
+  "Country": "Malawi",
+  "Year": "2013",
+  "LocalAmount": "8,242.0",
+  "USD": "11.47"
+ },
+ {
+  "Id": null,
+  "Country": "Mexico",
+  "Year": "2018",
+  "LocalAmount": "2,687.6",
+  "USD": "136.7 "
+ },
+ {
+  "Id": null,
+  "Country": "Malaysia",
+  "Year": "2018",
+  "LocalAmount": "1,100.0",
+  "USD": "270.8 "
+ },
+ {
+  "Id": null,
+  "Country": "Mozambique",
+  "Year": "2013",
+  "LocalAmount": "3,943.0",
+  "USD": "63.74"
+ },
+ {
+  "Id": null,
+  "Country": "Niger",
+  "Year": "2013",
+  "LocalAmount": "30,047.0",
+  "USD": "83.13"
+ },
+ {
+  "Id": null,
+  "Country": "Nigeria",
+  "Year": "2013",
+  "LocalAmount": "18,000.0",
+  "USD": "115.9 "
+ },
+ {
+  "Id": null,
+  "Country": "Nicaragua",
+  "Year": "2013",
+  "LocalAmount": "3,484.0",
+  "USD": "145.0 "
+ },
+ {
+  "Id": null,
+  "Country": "Netherlands",
+  "Year": "2019",
+  "LocalAmount": "1,635.6",
+  "USD": "1,823.9 "
+ },
+ {
+  "Id": null,
+  "Country": "Nepal",
+  "Year": "2013",
+  "LocalAmount": "8,000.0",
+  "USD": "91.2 "
+ },
+ {
+  "Id": null,
+  "Country": "New Zealand",
+  "Year": "2018",
+  "LocalAmount": "2,805.8",
+  "USD": "1,991.3 "
+ },
+ {
+  "Id": null,
+  "Country": "Oman",
+  "Year": "2013",
+  "LocalAmount": "325.0",
+  "USD": "845.3 "
+ },
+ {
+  "Id": null,
+  "Country": "Panama",
+  "Year": "2013",
+  "LocalAmount": "366.1",
+  "USD": "366.1 "
+ },
+ {
+  "Id": null,
+  "Country": "Peru",
+  "Year": "2018",
+  "LocalAmount": "930.0",
+  "USD": "287.2 "
+ },
+ {
+  "Id": null,
+  "Country": "Papua New Guinea",
+  "Year": "2013",
+  "LocalAmount": "437.0",
+  "USD": "128.48"
+ },
+ {
+  "Id": null,
+  "Country": "Philippines",
+  "Year": "2013",
+  "LocalAmount": "12,154.8",
+  "USD": "295.1 "
+ },
+ {
+  "Id": null,
+  "Country": "Pakistan",
+  "Year": "2017",
+  "LocalAmount": "16,000.0",
+  "USD": "152.7 "
+ },
+ {
+  "Id": null,
+  "Country": "Poland",
+  "Year": "2019",
+  "LocalAmount": "2,250.0",
+  "USD": "632.8 "
+ },
+ {
+  "Id": null,
+  "Country": "State of Palestine",
+  "Year": "2013",
+  "LocalAmount": "1,450.0",
+  "USD": "413.51"
+ },
+ {
+  "Id": null,
+  "Country": "Paraguay",
+  "Year": "2017",
+  "LocalAmount": "1,964,507.0",
+  "USD": "340.7 "
+ },
+ {
+  "Id": null,
+  "Country": "Romania",
+  "Year": "2019",
+  "LocalAmount": "2,080.0",
+  "USD": "510.6 "
+ },
+ {
+  "Id": null,
+  "Country": "Serbia",
+  "Year": "2019",
+  "LocalAmount": "36,365.0",
+  "USD": "343.1 "
+ },
+ {
+  "Id": null,
+  "Country": "Russia",
+  "Year": "2018",
+  "LocalAmount": "10,605.0",
+  "USD": "184.1 "
+ },
+ {
+  "Id": null,
+  "Country": "Rwanda",
+  "Year": "2013",
+  "LocalAmount": "2,167.0",
+  "USD": "22.00"
+ },
+ {
+  "Id": null,
+  "Country": "Saudi Arabia",
+  "Year": "2013",
+  "LocalAmount": "3,000.0",
+  "USD": "800.0 "
+ },
+ {
+  "Id": null,
+  "Country": "Solomon Islands",
+  "Year": "2010",
+  "LocalAmount": "780.0",
+  "USD": "94.25"
+ },
+ {
+  "Id": null,
+  "Country": "Sudan",
+  "Year": "2013",
+  "LocalAmount": "425.0",
+  "USD": "70.00"
+ },
+ {
+  "Id": null,
+  "Country": "Slovenia",
+  "Year": "2019",
+  "LocalAmount": "886.6",
+  "USD": "1,015.2 "
+ },
+ {
+  "Id": null,
+  "Country": "Slovakia",
+  "Year": "2019",
+  "LocalAmount": "520.0",
+  "USD": "595.4 "
+ },
+ {
+  "Id": null,
+  "Country": "Sierra Leone",
+  "Year": "2013",
+  "LocalAmount": "25,000.0",
+  "USD": "57.00"
+ },
+ {
+  "Id": null,
+  "Country": "Senegal",
+  "Year": "2013",
+  "LocalAmount": "36,244.0",
+  "USD": "60.72"
+ },
+ {
+  "Id": null,
+  "Country": "El Salvador",
+  "Year": "2018",
+  "LocalAmount": "304.2",
+  "USD": "304.2 "
+ },
+ {
+  "Id": null,
+  "Country": "Syria",
+  "Year": "2010",
+  "LocalAmount": "6,110.0",
+  "USD": "11.86"
+ },
+ {
+  "Id": null,
+  "Country": "Swaziland",
+  "Year": "2013",
+  "LocalAmount": "657.0",
+  "USD": "44.13"
+ },
+ {
+  "Id": null,
+  "Country": "Chad",
+  "Year": "2013",
+  "LocalAmount": "60,000.0",
+  "USD": "100.58"
+ },
+ {
+  "Id": null,
+  "Country": "Togo",
+  "Year": "2018",
+  "LocalAmount": "35,000.0",
+  "USD": "58.67"
+ },
+ {
+  "Id": null,
+  "Country": "Thailand",
+  "Year": "2013",
+  "LocalAmount": "7,800.0",
+  "USD": "255.0 "
+ },
+ {
+  "Id": null,
+  "Country": "Tajikistan",
+  "Year": "2013",
+  "LocalAmount": "250.0",
+  "USD": "25.80"
+ },
+ {
+  "Id": null,
+  "Country": "Timor-Leste",
+  "Year": "2013",
+  "LocalAmount": "115.0",
+  "USD": "115.0 "
+ },
+ {
+  "Id": null,
+  "Country": "Tunisia",
+  "Year": "2012",
+  "LocalAmount": "259.0",
+  "USD": "172.6 "
+ },
+ {
+  "Id": null,
+  "Country": "Turkey",
+  "Year": "2019",
+  "LocalAmount": "2,558.4",
+  "USD": "485.9 "
+ },
+ {
+  "Id": null,
+  "Country": "Trinidad and Tobago",
+  "Year": "2013",
+  "LocalAmount": "2,167.0",
+  "USD": "337.6 "
+ },
+ {
+  "Id": null,
+  "Country": "Taiwan",
+  "Year": "2013",
+  "LocalAmount": "19,047.0",
+  "USD": "655.7 "
+ },
+ {
+  "Id": null,
+  "Country": "Tanzania",
+  "Year": "2013",
+  "LocalAmount": "100,000.0",
+  "USD": "43.58"
+ },
+ {
+  "Id": null,
+  "Country": "Ukraine",
+  "Year": "2015",
+  "LocalAmount": "1,378.0",
+  "USD": "87.4 "
+ },
+ {
+  "Id": null,
+  "Country": "Uganda",
+  "Year": "2013",
+  "LocalAmount": "6,000.0",
+  "USD": "2.2 "
+ },
+ {
+  "Id": null,
+  "Country": "Uruguay",
+  "Year": "2013",
+  "LocalAmount": "7,920.0",
+  "USD": "408.3 "
+ },
+ {
+  "Id": null,
+  "Country": "Uzbekistan",
+  "Year": "2018",
+  "LocalAmount": "172,240.0",
+  "USD": "18.27"
+ },
+ {
+  "Id": null,
+  "Country": "Venezuela",
+  "Year": "2013",
+  "LocalAmount": "2,973.0",
+  "USD": "693.1 "
+ },
+ {
+  "Id": null,
+  "Country": "Vietnam",
+  "Year": "2015",
+  "LocalAmount": "1,150,000.0",
+  "USD": "49.62"
+ },
+ {
+  "Id": null,
+  "Country": "South Africa",
+  "Year": "2013",
+  "LocalAmount": "2,474.0",
+  "USD": "291.6 "
+ },
+ {
+  "Id": null,
+  "Country": "Zambia",
+  "Year": "2013",
+  "LocalAmount": "700.0",
+  "USD": "53.75"
+ }
+]
