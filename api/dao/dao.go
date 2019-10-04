@@ -78,7 +78,17 @@ func GetAll(data interface{}) interface{} {
 
 func GetItem(data interface{}, itemID string) interface{} {
 
+	/*oids := make([]bson.ObjectId, len(ids))
+
+	for i := range ids {
+		oids[i] = bson.ObjectIdHex(ids[i])
+	}
+	query := bson.M{"_id": bson.M{"$in": oids}}
+
+	*/
+
 	objID, _ := primitive.ObjectIDFromHex(itemID)
+
 	filter := bson.D{{"_id", objID}}
 
 	switch data.(type) {

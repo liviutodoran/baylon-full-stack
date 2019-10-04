@@ -39,6 +39,10 @@ func main() {
 	router.HandleFunc("/wage", handlers.DeleteItem(wage)).Methods("DELETE")
 	router.HandleFunc("/languages", handlers.DeleteItem(languages)).Methods("DELETE")
 
+	router.HandleFunc("/languages", handlers.DeleteItem(languages)).Methods("DELETE")
+
+	router.HandleFunc("/currency/{item1}/{item2}", handlers.GetCurrency).Methods("GET")
+
 	fmt.Println("Starting server on port 8020...")
 	log.Fatal(http.ListenAndServe(":8020", router))
 
